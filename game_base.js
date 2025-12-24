@@ -106,7 +106,7 @@ function updateStatus() {
 }
 
 /* =========================================================
-   敵画像の状態遷移（※1）
+   敵画像の状態遷移
    ========================================================= */
 function updateEnemySpriteByHP() {
   if (enemyHP <= 0) {
@@ -193,7 +193,7 @@ function endPlayerTurn() {
   isPlayerTurn = false;
   setButtonsEnabled(false);
 
-  // 敵の行動は JS-3 で実装
+  // 敵の行動は game_enemy.js で実装
   enemyAction();
 }
 
@@ -213,10 +213,28 @@ function startPlayerTurn() {
 }
 
 /* =========================================================
-   リスタート
+   リスタート（リロードしないで再開）
    ========================================================= */
 btnRestart.onclick = () => {
-  location.reload();
+  // パラメータ初期化
+  playerHP = MAX_PLAYER_HP;
+  enemyHP  = MAX_ENEMY_HP;
+  playerMP = 0;
+  enemyMP  = 0;
+  gameOver = false;
+  isPlayerTurn = true;
+  playerDefending = false;
+  enemyIsCharging = false;
+
+  // UI 初期化
+  youWinDiv.style.display = "none";
+  btnRestart.style.display = "none";
+  updateStatus();
+  updateEnemySpriteByHP();
+  setButtonsEnabled(true);
+
+  // 再スタートメッセージ
+  showMessage("オーナーを酔い潰せたら勝ちだ！");
 };
 
 /* =========================================================
@@ -225,3 +243,6 @@ btnRestart.onclick = () => {
 updateStatus();
 updateEnemySpriteByHP();
 setButtonsEnabled(true);
+
+// ゲーム開始メッセージ
+showMessage("オーナーを酔い潰せたら勝ちだ！");

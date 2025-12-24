@@ -36,7 +36,7 @@ function enemyNormalAttack() {
     "酔ったオーナー：え？！私だけ？？！飲んでよ！"
   ];
 
-  const dmg = Math.floor((350 + Math.random() * 200) * 1.5);
+  const dmg = Math.floor((350 + Math.random() * 200) * 1.6);
 
   startSteps([
     () => {
@@ -105,7 +105,7 @@ function enemyChargeAttack_Defended() {
     "酔ったオーナー：ふつうか、ま、おけ。"
   ];
 
-  const dmg = Math.floor((200 + Math.random() * 150) * 1.5);
+  const dmg = Math.floor((200 + Math.random() * 150) * 0.9);
 
   startSteps([
     () => {
@@ -148,7 +148,7 @@ function enemyChargeAttack_NotDefended() {
     "酔ったオーナー：のめのめ！"
   ];
 
-  const dmg = Math.floor((900 + Math.random() * 600) * 1.5);
+  const dmg = Math.floor((900 + Math.random() * 600) * 2.0);
 
   startSteps([
     () => {
