@@ -214,17 +214,26 @@ body {
 #message-area {
   flex-grow: 1;
   margin-left: 10px;
-  font-size: 20px;
+  font-size: 21px;
   text-align: left;
   white-space: pre-line;
-  overflow-y: auto;
   cursor: pointer;
-  position: relative; /* tap-indicator の基準にする場合 */
+  position: relative;
+
+  display: flex;              /* ← 追加：中央揃えのため */
+  align-items: center;        /* ← 縦方向の中央揃え */
+  justify-content: flex-start;/* ← 横方向は左寄せのまま */
+
+  overflow: hidden;           /* ← スクロール禁止 */
+  height: 100%;               /* ← 高さを固定 */
 }
 
 /* メッセージ選択不可（PC・スマホ両対応） */
 #message-box,
-#message-text,
+#message-text {
+  width: 100%;
+  line-height: 1.6;
+}
 #tap-indicator {
   user-select: none;
   -webkit-user-select: none;
@@ -303,10 +312,14 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 64px;
+  font-size: 48px;          /* ← 少し小さくして1行確定 */
   font-weight: bold;
   color: #ffea00;
   text-shadow: 4px 4px 8px #000;
   z-index: 9999;
   display: none;
+
+  white-space: nowrap;      /* ← 折り返し禁止（これが最重要） */
+  width: auto;              /* ← 幅を固定しない */
+  max-width: none;          /* ← GitHub Pages で勝手に縮まないように */
 }
