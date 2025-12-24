@@ -220,16 +220,18 @@ body {
   cursor: pointer;
   position: relative;
 
-  display: flex;              /* ← 追加：中央揃えのため */
-  align-items: center;        /* ← 縦方向の中央揃え */
-  justify-content: flex-start;/* ← 横方向は左寄せのまま */
-
-  overflow: hidden;           /* ← スクロール禁止 */
-  height: 100%;               /* ← 高さを固定 */
+  /* 中央揃え + スクロール禁止 */
+  display: flex;
+  align-items: center;         /* 縦中央 */
+  justify-content: flex-start; /* 横は左寄せ */
+  overflow: hidden;            /* スクロール完全OFF */
 }
 
 /* メッセージ選択不可（PC・スマホ両対応） */
-#message-box,
+#message-box {
+  width: 100%;
+}
+
 #message-text {
   width: 100%;
   line-height: 1.6;
@@ -244,12 +246,12 @@ body {
 #tap-indicator {
   position: absolute;
   bottom: 4px;
-  left: 8px;
+  right: 8px;   /* ← 左ではなく右に変更 */
   font-size: 14px;
   color: #fff;
   opacity: 0.6;
-  display: none;        /* ← 普段は非表示 */
-  pointer-events: none; /* ← クリック無効 */
+  display: none;
+  pointer-events: none;
 }
 
 /* =========================================================
