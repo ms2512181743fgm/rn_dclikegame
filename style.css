@@ -115,7 +115,7 @@ body {
 }
 
 .status-box {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.85);
   border: 2px solid #fff;
   padding: 10px 15px;
   width: 48%;
@@ -167,7 +167,7 @@ body {
   left: 20px;
   right: 20px;
   height: 130px;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.85);
   border: 2px solid #fff;
   display: flex;
   padding: 8px;
