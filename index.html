@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>酔ったオーナー バトル</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="game-wrapper">
+    <div id="battle-field">
+
+      <!-- 背景 -->
+      <img id="background" src="Haikei.png">
+
+      <!-- 敵キャラ表示領域（状態画像・演出画像すべてここに表示） -->
+      <div id="enemy-area">
+        <img id="enemy-sprite" src="rn_st_0.png">
+      </div>
+
+      <!-- 攻撃エフェクト（必要なら使用） -->
+      <div id="effect">
+        <img id="effect-img">
+      </div>
+
+      <!-- ステータス表示 -->
+      <div id="status-area">
+
+        <!-- プレイヤー -->
+        <div class="status-box" id="player-status">
+          <div class="status-name">あなた</div>
+          <div class="status-text" id="player-hp-text"></div>
+          <div class="hp-bar"><div class="hp-inner" id="player-hp-bar"></div></div>
+          <div class="status-text" id="player-mp-text"></div>
+          <div class="mp-bar"><div class="mp-inner" id="player-mp-bar"></div></div>
+        </div>
+
+        <!-- 敵 -->
+        <div class="status-box" id="enemy-status">
+          <div class="status-name">酔ったオーナー</div>
+          <div class="status-text" id="enemy-hp-text"></div>
+          <div class="hp-bar"><div class="hp-inner" id="enemy-hp-bar"></div></div>
+        </div>
+
+      </div>
+
+      <!-- コマンドウィンドウ -->
+      <div id="command-area">
+
+        <div id="command-buttons">
+          <button id="btn-attack">１杯あげる</button>
+          <button id="btn-magic">テキーラのます</button>
+          <button id="btn-defend">スルースキル</button>
+          <button id="restart-btn" style="display:none;">もう一度</button>
+        </div>
+
+        <!-- メッセージエリア（クリックで次へ進む） -->
+        <div id="message-area">
+          <div id="message-box">
+            <div id="message-text"></div>
+            <div id="tap-indicator">(tap!)</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 勝利表示 -->
+      <div id="you-win">!! YOU WIN !!</div>
+
+    </div>
+  </div>
+
+  <script src="game_base.js"></script> 
+  <script src="game_player.js"></script> 
+  <script src="game_enemy.js"></script>
+
+</body>
+</html>
